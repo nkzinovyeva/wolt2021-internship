@@ -1,25 +1,45 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import Carousel from './components/Carousel.js';
 
 function App() {
+
+  const [data, setData] = useState([]);
+
+  /** 
+   * get data from a local JSON file
+   **/
+
+  const getData=()=>{
+    fetch('discovery_page.json'
+    ,{
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }
+    }
+    )
+      .then(function(response){
+        return response.json();
+      })
+      .then(function(data) {
+        setData(data.sections);
+      });
+  }
+
+  useEffect(()=>{
+    getData()
+  },[])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     {
+      data && data.length > 0 && data.map((item, index)=>
+        <Carousel key={index} restaurants={item.restaurants} title={item.title} />
+       )
+     }
     </div>
-  );
+ );
 }
 
 export default App;

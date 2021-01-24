@@ -1,38 +1,128 @@
 .App {
-  text-align: center;
+  width: 100%;
+  height: auto;
+  font-family: var(--font);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* var-s */
+:root {
+  --font : 'Sofia', sans-serif;
+  --font-size: 14px;
+  --blue : #0a4870;
+  --black: #000;
+  --grey : #7d7d7d;
+  --grey2 : #f0f0f0;
+  --grey4 : #fdfdfd;
+  --bluegrey : #49606e;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.title {
+  color: var(--blue);
+  margin: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* 
+* react-slick carousel 
+*/
+
+.carousel-container {
+  padding: 5px;
+  margin: 5px auto;
 }
 
-.App-link {
-  color: #61dafb;
+/* carousel */
+.slick-slider {
+  width: 90%;
+  height: auto;
+  margin: 5px auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* slides */
+.slick-slide {
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+/* arrows */
+.slick-prev:before,
+.slick-next:before {
+  color: var(--grey);
+}
+
+/*
+* CARD
+*/
+
+/* container */
+.card {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  border: 1px solid var(--grey2);
+  border-radius: 0 0 10px 10px;
+  box-shadow: 1px 1px 3px var(--bluegrey, 0.5); 
+  background-color: var(--grey2);  
+}
+
+/* image */
+.cardImage {
+  position: absolute;
+  opacity: 0.8;
+  width: 100%;
+  height: 70%;
+}
+
+.cardImage:hover {
+  opacity: 1;
+}
+
+/* textual content */
+.cardContent{
+  width: 100%;
+  height: 100%;
+}
+
+/* title */
+.cardTitle {
+  position: absolute;
+  font-weight: bold;
+  color: var(--blue);
+  padding-left: 5px;
+  margin-top: 150px;
+}
+
+/* depends on status: TEXT */
+.statusOnline,
+.statusOffline {
+  position: absolute;
+  padding-left: 5px;
+  margin-top: 115px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: var(--font-size);
+}
+
+.statusOnline {
+  color: var(--grey4);
+}
+
+.statusOffline {
+  color: var(--bluegrey);
+}
+
+/* depends on status: IMAGE */
+.online,
+.offline {
+  position: absolute;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.offline {
+  opacity: 0.8;
+  filter: grayscale(100%);
+}
+
+.offline:hover {
+  opacity: 1;
 }
