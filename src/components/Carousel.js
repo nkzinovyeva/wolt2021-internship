@@ -7,11 +7,9 @@ import Card from './Card';
 */
 function Carousel(props) {
 
-    const max_slides = props.restaurants.length;
-  
     const settings = {
         dots: true,
-        infinite: props.restaurants.length < max_slides,
+        infinite: props.restaurants.length > 3,
         speed: 600,
         slidesToShow: 5,
         slidesToScroll: 1,
