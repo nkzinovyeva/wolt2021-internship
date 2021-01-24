@@ -34,12 +34,12 @@
 .slick-slider {
   width: 90%;
   height: auto;
-  margin: 5px auto;
+  margin: 10px auto;
 }
 
 /* slides */
 .slick-slide {
-  padding: 5px;
+  padding: 10px;
   box-sizing: border-box;
 }
 
