@@ -5,7 +5,7 @@ Demo-page: https://wolt2021.herokuapp.com/
 I tried to make this task as simple as possible - a plain but neat design, minimal use of external libraries, and instead a single CSS stylesheet, a simple and popular among developers carousel (https://react-slick.neostack.com/). 
 Unfortunately, the carousel has a known problem, which in our case turned out to be critical - it does not have a trigger to switch the infinite scrolling to the false position if cards' number is smaller than the slidesToShow. In this case, I decided not to silenly fix the provided json file, but enter the trigger manually. Thus, in the case of New Restaurants, the client sees only three new restaurants as it is in the provided data package, without duplicate information on the same page. When the screen size is reduced, the carousel switches to infinite scrolling mode when the corresponding screen size is reached.
 
-Natalia
+<img src="images/demo.png" width='600'>
 
 -----------------------------------------
 ### Getting Started with Create React App
